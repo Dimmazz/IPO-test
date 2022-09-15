@@ -1,0 +1,134 @@
+@import '../Styles/vars';
+
+.course-module {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+
+    &+& {
+        padding-left: 45px;
+    }
+
+    @media (max-width: $width-mid) {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        &+& {
+            padding-left: 0;
+        }
+    }
+}
+
+.course-module__title {
+    white-space: nowrap;
+    position: relative;
+
+    transition: background-color .5s ease-in;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: 0;
+
+        width: 140px;
+        height: 2px;
+
+        background-color: $color-primary;
+    }
+
+    @media (max-width: $width-mid) {
+        margin-bottom: 17px;
+    }
+
+    @media (max-width: $width-mobile) {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 130%;
+        cursor: pointer;
+
+        width: 100%;
+        padding: 14px 0 14px 70px;
+
+        color: $color-dark2;
+        background-color: #F7F7F7;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 24px;
+
+            transform: translateY(-50%);
+
+            width: 18px;
+            height: 18px;
+            background: url("/src/assets/icons/plus.svg") no-repeat;
+        }
+
+        &+& {
+            padding-top: 10px;
+        }
+    }
+}
+
+.course-module__title--openned {
+    @media (max-width: $width-mobile) {
+        color: $color-white;
+        background-color: $color-primary;
+
+        &::before {
+            height: 2px;
+            background: url("/src/assets/icons/minus.svg") no-repeat;
+        }
+    }
+}
+
+.course__desc {
+    max-width: calc(373px + 90px);
+    padding-left: 90px;
+
+    transition: all .5s ease-in;
+
+    @media (max-width: $width-mid) {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-bottom: 34px;
+    }
+}
+
+@keyframes appearance {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.course__desc--openned {
+    display: block;
+}
+
+.course__desc-closed {
+    display: none;
+
+    @media (min-width: ($width-mobile + 1px)) {
+        display: block;
+    }
+}
+
+.course__skill {
+    color: $color-black;
+
+    &+& {
+        padding-top: 10px;
+    }
+
+    @media (max-width: $width-mobile) {
+        color: $color-dark2;
+    }
+}

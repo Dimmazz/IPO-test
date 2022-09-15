@@ -1,0 +1,176 @@
+@import "./base";
+
+
+html {
+    box-sizing: border-box;
+    font-weight: 400;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+
+    color: $color-black;
+    background-color: $color-bg;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+    color: inherit;
+}
+
+ol,
+ul {
+    list-style-type: disc;
+    padding: 0;
+    margin: 0;
+}
+
+li::marker {
+    color: $color-primary;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #00000000;
+    transition: border .2s ease-in,
+        color .2s ease-in;
+
+    &:hover {
+        color: $color-light;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+// reset texts tag
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $color-black;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: $fz-main;
+    margin: 0;
+    padding: 0;
+}
+
+// Custom classes
+.main-contaier {
+    padding: 70px 0 170px;
+    width: 80%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    @media (max-width: $width-laptop) {
+        width: 90%;
+    }
+
+    @media (max-width: $width-mid) {
+        width: 95%;
+    }
+
+    @media (max-width: 568px) {
+        width: 100%;
+        margin: 0;
+    }
+
+    @media (max-width: $width-mobile) {
+        padding: 28px 15px 47px 15px;
+    }
+}
+
+.title1 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+
+    @media (max-width: $width-mobile) {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 120%;
+    }
+}
+
+.title2 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 120%;
+}
+
+.title3 {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: -1.5px;
+}
+
+.title4 {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 120%;
+
+    @media (max-width: $width-mobile) {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 120%;
+    }
+}
+
+.title5 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: -1.5px;
+}
+
+// .title6 {}
+
+.subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.15px;
+}
+
+.subtitle-2 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.1px;
+}
+
+.desc {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 120%;
+
+    @media (max-width: $width-mobile) {
+        font-size: 15px;
+        line-height: 130%;
+    }
+}
+
+
+.link+.link {
+    margin-left: 10px;
+}

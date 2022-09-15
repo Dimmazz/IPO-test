@@ -1,0 +1,20 @@
+@import '../Styles/vars';
+
+.course-list__course-item {
+    &+& {
+        padding-top: 70px;
+    }
+}
+
+.course-item__modules {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $width-mobile) {
+        flex-wrap: wrap;
+    }
+}
+
+.course-item__title {
+    padding-bottom: 55px;
+}

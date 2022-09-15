@@ -1,0 +1,9 @@
+.animation-appearance {
+    animation: appearance .5s;
+    -webkit-animation: appearance .5s;
+
+    @media (prefers-reduced-motion: reduce) {
+        animation: none;
+        -webkit-animation: none;
+    }
+}

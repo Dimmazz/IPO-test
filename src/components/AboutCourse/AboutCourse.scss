@@ -1,0 +1,59 @@
+@import "../Styles/vars";
+
+.about-modules {
+    display: flex;
+    justify-content: center;
+    color: $color-white;
+
+    @media (max-width: $width-laptop) {
+        flex-wrap: wrap;
+    }
+}
+
+.about-modules__item {
+    background-color: $color-dark;
+    padding: 55px;
+    width: 630px;
+    min-height: 300px;
+    max-height: max-content;
+
+    &+& {
+        margin-left: 30px;
+    }
+
+    @media (max-width: $width-laptop) {
+        flex-wrap: wrap;
+                &+& {
+                        margin-top: 23px;
+                        margin-left: 0px;
+                    }
+    }
+
+    @media (max-width: $width-mobile) {
+        height: max-content;
+        max-height: 800px;
+    }
+}
+
+.about-modules__item--primary {
+    background-color: $color-primary;
+    $width: calc(100% - 43px);
+
+    clip-path: polygon(0 0, $width 0, 100% 43px, 100% 100%, 0% 100%);
+}
+
+.about-module__title {
+    color: $color-white;
+    padding-bottom: 25px;
+}
+
+.about-module__desc {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.about-module__desc-item {
+    &+& {
+        padding-top: 10px;
+    }
+}
